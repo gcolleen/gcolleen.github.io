@@ -33,18 +33,22 @@ nyc_rest <- rest_inspec  %>%
   mutate(address = str_c(building, " ", street, ", New York ", zipcode))
 ```
 
-##boxplot
+##plot of failing restaurants by type of food
+1. count n for all categories
 ```{r}
 nyc_rest %>%
-  group_by(boro, grade) %>%
+  mutate(cuisine_description =  fct_collapse(cuisine_description, Latin = c("Latin (Cuban, Dominican, Puerto Rican, South & Central American)", "Peruvian"), Drink = "Bottled beverages, including water, sodas, juices, etc.", Sandwich = c("Sandwiches", "Sandwiches/Salads/Mixed Buffet"))) %>%
+  mutate(grade = fct_collapse(grade, "Below A" = c("B", "C"))) %>%
+  group_by(cuisine_description, grade) %>%
   summarize(n_grade = n()) %>%
-  mutate(perc_failing = n_grade/sum(n_grade)) %>%
-  filter(grade == "A") %>%
-  mutate(boro = fct_reorder(boro, perc_failing)) %>%
-  plot_ly(y = ~perc_failing, x = ~boro, color = ~boro,
-          type = "bar", colors = "viridis")
+  mutate(total = sum(n_grade), perc_failing = (n_grade/total) * 100) %>%
+  filter(total >= 100, grade == "Below A") %>%
+  mutate(cuisine_description = droplevels(cuisine_description)) %>%
+  mutate(cuisine_description = fct_reorder(cuisine_description, perc_failing)) %>%
+  plot_ly(y = ~cuisine_description, x = ~perc_failing,
+          type = "bar", colors = "viridis") %>%
+  layout(title = "Percent of Restaurants Below A Grade by Cuisine", xaxis = list(title ="% of Restaurants Below A"), yaxis = list(title = "Cuisine Type"))
 ```
-
 
 ##bar plot of restaurant count by borough
 ```{r}
@@ -57,6 +61,17 @@ nyc_rest %>%
 ```
 
 
+#roaches present by grade
+```{r}
+nyc_rest %>%
+  mutate(vermin = ifelse(grepl('roaches|mice', violation_description), TRUE, FALSE)) %>%
+  group_by(grade, vermin) %>%
+  summarize(n = n()) %>%
+  mutate(total = sum(n), perc_vermin = (n/total) * 100) %>%
+  filter(vermin == TRUE) %>%
+  plot_ly(x = ~grade, y = ~perc_vermin, type = "bar") %>%
+  layout(title = "Percent of Restaurants with Vermin Present by Grade", xaxis = list(title ="Restaurant Grade"), yaxis = list(title = "% of Restaurants with Cockroaches or Rats Present"))
+```
 
 
 
