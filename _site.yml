@@ -2,13 +2,16 @@ name: "Yay internet!"
 output_dir: "."
 navbar:
   title: "Home"
-  right:
+  left:
     - text: "About"
       href: about.html
-    - text: "Plotly"
-      href: plotly.html
     - text: "Dashboard"
       href: dashboard.html
+  right:
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/gcolleen/
+    - icon: fa-twitter-square fa-lg
+      href: https://twitter.com/gunnarcolleen
     - icon: fa-envelope fa-lg
       href: mailto:<jgc2157@columbia.edu>
     - icon: fa-github fa-lg

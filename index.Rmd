@@ -1,11 +1,14 @@
 ---
-title: "My great website"
+title: "Gunnar Colleen"
 output:
-  html_document:
-    toc: true
-    toc_float: true
+  html_document
 ---
 # Welcome to my dark twisted mind
 
 
-* [Next page](about.html)
+**MPH Candidate 2022, Population and Family Health**
+
+**Columbia University Mailman School of Public Health**
+
+**Graduate Research Assistant, CPC Learning Network**
+
