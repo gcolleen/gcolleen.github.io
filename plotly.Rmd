@@ -9,45 +9,48 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-loading airbnb data
+loading nyc restaurants data
 
 ```{r}
 library(tidyverse)
 library(janitor)
 library(p8105.datasets)
 library(plotly)
+library(tidygeocoder)
 ```
-
 
 cleaning the dataset
-```{r}
-data("nyc_airbnb")
+```{r, eval= FALSE}
+data("rest_inspec")
 
-airbnb <- nyc_airbnb  %>%
-  rename(borough = neighbourhood_group) %>%
-  mutate(rating = review_scores_location/2) %>%
-  select(borough, neighbourhood, rating, price, room_type, lat, long) %>%
+nyc_rest <- rest_inspec  %>%
+  rename(rest_id = camis, rest_name = dba) %>%
+  mutate(boro = ifelse(boro == "Missing", NA, boro), boro = factor(boro, labels = c("MANHATTAN", "BRONX", "BROOKLYN", "QUEENS", "STATEN ISLAND")), grade = factor(grade, labels = c("A", "B", "C", "P", "Z", "Not Yet Graded"))) %>%
+  select(boro, grade, score, rest_id, rest_name, cuisine_description, violation_description, violation_code, street, building, zipcode) %>%
   filter(
-    borough == "Manhattan", price %in% 100:500,
-    room_type == "Entire home/apt"
-  ) %>% drop_na(rating)
+    boro == "MANHATTAN") %>%
+  drop_na(grade) %>%
+  slice_sample(n = 2500, replace = FALSE)
+```
+
+#combing building street and zipcode into address
+```{r, eval = FALSE}
+nyc_rest <- nyc_rest %>%
+  mutate(address = str_c(building, " ", street, ", New York ", zipcode))
 ```
 
 
 
-
-#time to make some plotly plots
-##scaterplot
-
-```{r}
-airbnb %>%
-  mutate(text_label = str_c("Price: $", price, "\nRating: ", rating)) %>%
-  plot_ly(
-    x = ~lat, y = ~long, color = ~price, text = ~text_label,
-    alpha = .5, type = "scatter", mode = "markers", colors = "viridis"
-  )
+#adding lat and long variables to data set
+```{r, eval= FALSE}
+nyc_addresses <- nyc_rest %>%
+  geocode(address)
 ```
 
+#saving geocoded data to a csv so that I don't need to geocode data again
+```{r, eval = FALSE}
+write_csv(nyc_addresses, "nyc_addresses.csv")
+```
 
 
 
