@@ -16,73 +16,54 @@ library(tidyverse)
 library(janitor)
 library(p8105.datasets)
 library(plotly)
-library(tidygeocoder)
+library(lubridate)
 ```
 
 cleaning the dataset
-```{r, eval= FALSE}
+```{r}
 data("rest_inspec")
 
 nyc_rest <- rest_inspec  %>%
   rename(rest_id = camis, rest_name = dba) %>%
-  mutate(boro = ifelse(boro == "Missing", NA, boro), boro = factor(boro, labels = c("MANHATTAN", "BRONX", "BROOKLYN", "QUEENS", "STATEN ISLAND")), grade = factor(grade, labels = c("A", "B", "C", "P", "Z", "Not Yet Graded"))) %>%
-  select(boro, grade, score, rest_id, rest_name, cuisine_description, violation_description, violation_code, street, building, zipcode) %>%
-  filter(
-    boro == "MANHATTAN") %>%
+  mutate(boro = ifelse(boro == "Missing", NA, boro), boro = as.factor(boro), grade = factor(grade, labels = c("A", "B", "C", "P", "Z", "Not Yet Graded")), cuisine_description = as_factor(cuisine_description)) %>%
+  select(boro, grade, score, rest_id, rest_name, cuisine_description, violation_description, violation_code, street, building, zipcode, inspection_date) %>%
+  filter(inspection_date >= "2016-11-01") %>%
   drop_na(grade) %>%
-  slice_sample(n = 2500, replace = FALSE)
-```
-
-#combing building street and zipcode into address
-```{r, eval = FALSE}
-nyc_rest <- nyc_rest %>%
+  distinct(rest_id, .keep_all = TRUE) %>%
   mutate(address = str_c(building, " ", street, ", New York ", zipcode))
 ```
 
-
-
-#adding lat and long variables to data set
-```{r, eval= FALSE}
-nyc_addresses <- nyc_rest %>%
-  geocode(address)
-```
-
-#saving geocoded data to a csv so that I don't need to geocode data again
-```{r, eval = FALSE}
-write_csv(nyc_addresses, "nyc_addresses.csv")
-```
-
-
-
-
 ##boxplot
-
 ```{r}
-airbnb %>%
-  mutate(neighbourhood = fct_reorder(neighbourhood, price)) %>%
-  plot_ly(y = ~price, x = ~neighbourhood, color = ~neighbourhood,
-          type = "box", colors = "viridis")
-```
-
-
-##bar plot
-```{r}
-airbnb %>%
-  count(neighbourhood) %>%
-  mutate(neighbourhood = fct_reorder(neighbourhood, n)) %>%
-  plot_ly(x = ~neighbourhood, y = ~n, color = ~neighbourhood, 
+nyc_rest %>%
+  group_by(boro, grade) %>%
+  summarize(n_grade = n()) %>%
+  mutate(perc_failing = n_grade/sum(n_grade)) %>%
+  filter(grade == "A") %>%
+  mutate(boro = fct_reorder(boro, perc_failing)) %>%
+  plot_ly(y = ~perc_failing, x = ~boro, color = ~boro,
           type = "bar", colors = "viridis")
 ```
 
 
-##ggplotly
+##bar plot of restaurant count by borough
 ```{r}
-airbnb_scatter <- airbnb %>%
-  ggplot(aes(x = lat, y = long, color = price)) +
-  geom_point()
-
-ggplotly(airbnb_scatter)
+nyc_rest %>%
+  count(boro) %>%
+  mutate(boro = fct_reorder(boro, n)) %>%
+  plot_ly(x = ~boro, y = ~n, color = ~boro, 
+          type = "bar", colors = "viridis") %>%
+  layout(title = "Number of Restaurants by Borough", xaxis = list(title ="Borough"), yaxis = list(title = "Number of Restaurants"))
 ```
+
+
+
+
+
+
+
+
+
 
 
 #Dashboard time
