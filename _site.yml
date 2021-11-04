@@ -15,7 +15,7 @@ navbar:
     - icon: fa-envelope fa-lg
       href: mailto:<jgc2157@columbia.edu>
     - icon: fa-github fa-lg
-      href: https://jgc2157.github.io
+      href: https://gcolleen.github.io
 output:
   html_document:
     theme: yeti

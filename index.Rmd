@@ -1,7 +1,8 @@
 ---
 title: "Gunnar Colleen"
 output:
-  html_document
+  html_document:
+    toc: FALSE
 ---
 # Welcome to my dark twisted mind
 
