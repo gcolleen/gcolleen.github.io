@@ -81,6 +81,6 @@ nyc_rest %>%
   mutate(cuisine_description = fct_reorder(cuisine_description, perc_failing)) %>%
   plot_ly(y = ~cuisine_description, x = ~perc_failing,
           type = "bar", colors = "viridis") %>%
-  layout(title = "Percent of Restaurants Below A Grade by Cuisine in 2017", xaxis = list(title ="% of Restaurants Below 'A' Grade"), yaxis = list(title = "Cuisine Type"))
+  layout(title = "Percent of Restaurants Below A by Cuisine in 2017", xaxis = list(title ="% of Restaurants Below 'A' Grade"), yaxis = list(title = "Cuisine Type"))
 ```
 
