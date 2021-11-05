@@ -18,4 +18,4 @@ navbar:
       href: https://gcolleen.github.io
 output:
   html_document:
-    theme: yeti
+    theme: cosmo

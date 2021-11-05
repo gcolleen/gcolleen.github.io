@@ -27,7 +27,7 @@ window.FlexDashboardComponents = [];
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -751,29 +751,53 @@ table.dataTable thead th {
 
 
 body {
-  padding-top: 54px;
+  padding-top: 60px;
 }
 
 .section.sidebar {
-  top: 45px;
-  background-color: rgba(0, 140, 186, 0.1);
+  top: 51px;
+  background-color: rgba(39, 128, 227, 0.1);
 }
 
 .value-box {
-  color: inherit;
+  color: #f9f9f9;
 }
 
 .bg-primary {
-  background-color: rgba(0, 140, 186, 0.3);
+  background-color: rgba(39, 128, 227, 0.7);
 }
 
 .storyboard-nav .sbframelist ul li.active {
-  background-color: rgba(0, 140, 186, 0.7);
+  background-color: rgba(39, 128, 227, 0.7);
 }
 
-
 .nav-tabs-custom > .nav-tabs > li.active {
-  background-color: rgba(0, 140, 186, 0.7);
+  border-top-color: rgba(39, 128, 227, 0.7);
+}
+
+.bg-info {
+  background-color: rgba(153, 84, 187, 0.7);
+}
+
+.bg-warning {
+  background-color: rgba(255, 117, 24, 0.7);
+}
+
+.bg-danger {
+  background-color: rgba(255, 0, 57, 0.7);
+}
+
+.bg-success {
+  background-color: rgba(63, 182, 24, 0.7);
+}
+
+.chart-title {
+  font-weight: 500;
+}
+
+.nav-tabs-custom > .nav-tabs > li > a,
+.nav-tabs-custom > .nav-tabs > li > a:active {
+  font-weight: 500;
 }
 
 @media only screen and (min-width: 768px) {
@@ -2617,9 +2641,6 @@ window.FlexDashboardComponents.push({
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div class="knitr-options" data-fig-width="576" data-fig-height="460">
-
-</div>
 <div id="column" class="section level2" data-width="650">
 <h2 data-width="650">Column</h2>
 <div id="chart-a" class="section level3">
@@ -2627,8 +2648,8 @@ window.FlexDashboardComponents.push({
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div id="htmlwidget-5890b59c45441478bc57" style="width:576px;height:460.8px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5890b59c45441478bc57">{"x":{"visdat":{"10d126aa56fc":["function () ","plotlyVisDat"]},"cur_data":"10d126aa56fc","attrs":{"10d126aa56fc":{"x":{},"y":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Percent of Restaurants with Vermin Present by Grade","xaxis":{"domain":[0,1],"automargin":true,"title":"Restaurant Grade","type":"category","categoryorder":"array","categoryarray":["A","B","C","P","Z","Not Yet Graded"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"% of Restaurants with Cockroaches or Rats Present"},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["A","B","C","P","Z","Not Yet Graded"],"y":[5.39339405245254,13.4128166915052,13.4099616858238,4.99194847020934,12.5,7.92682926829268],"type":"bar","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c9d5463761cb1fbbf4f5" style="width:576px;height:460.8px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c9d5463761cb1fbbf4f5">{"x":{"visdat":{"257c29643603":["function () ","plotlyVisDat"]},"cur_data":"257c29643603","attrs":{"257c29643603":{"x":{},"y":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Percent of Restaurants with Vermin Present by Grade","xaxis":{"domain":[0,1],"automargin":true,"title":"Restaurant Grade","type":"category","categoryorder":"array","categoryarray":["A","B","C","P","Z","Not Yet Graded"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"% of Restaurants with Cockroaches or Rats Present"},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["A","B","C","P","Z","Not Yet Graded"],"y":[5.39339405245254,13.4128166915052,13.4099616858238,4.99194847020934,12.5,7.92682926829268],"type":"bar","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="column-1" class="section level2" data-width="350">
@@ -2638,16 +2659,16 @@ window.FlexDashboardComponents.push({
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div id="htmlwidget-5fbb5976ef891ea8c8ae" style="width:576px;height:460.8px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5fbb5976ef891ea8c8ae">{"x":{"visdat":{"10d179cefcb2":["function () ","plotlyVisDat"]},"cur_data":"10d179cefcb2","attrs":{"10d179cefcb2":{"x":{},"y":{},"color":{},"colors":"viridis","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Number of Restaurants by Borough","xaxis":{"domain":[0,1],"automargin":true,"title":"Borough","type":"category","categoryorder":"array","categoryarray":["STATEN ISLAND","BRONX","QUEENS","BROOKLYN","MANHATTAN"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Number of Restaurants"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["STATEN ISLAND"],"y":[782],"type":"bar","name":"STATEN ISLAND","marker":{"color":"rgba(68,1,84,1)","line":{"color":"rgba(68,1,84,1)"}},"textfont":{"color":"rgba(68,1,84,1)"},"error_y":{"color":"rgba(68,1,84,1)"},"error_x":{"color":"rgba(68,1,84,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["BRONX"],"y":[1971],"type":"bar","name":"BRONX","marker":{"color":"rgba(59,82,139,1)","line":{"color":"rgba(59,82,139,1)"}},"textfont":{"color":"rgba(59,82,139,1)"},"error_y":{"color":"rgba(59,82,139,1)"},"error_x":{"color":"rgba(59,82,139,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["QUEENS"],"y":[4867],"type":"bar","name":"QUEENS","marker":{"color":"rgba(33,144,141,1)","line":{"color":"rgba(33,144,141,1)"}},"textfont":{"color":"rgba(33,144,141,1)"},"error_y":{"color":"rgba(33,144,141,1)"},"error_x":{"color":"rgba(33,144,141,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["BROOKLYN"],"y":[5338],"type":"bar","name":"BROOKLYN","marker":{"color":"rgba(93,200,99,1)","line":{"color":"rgba(93,200,99,1)"}},"textfont":{"color":"rgba(93,200,99,1)"},"error_y":{"color":"rgba(93,200,99,1)"},"error_x":{"color":"rgba(93,200,99,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["MANHATTAN"],"y":[8439],"type":"bar","name":"MANHATTAN","marker":{"color":"rgba(253,231,37,1)","line":{"color":"rgba(253,231,37,1)"}},"textfont":{"color":"rgba(253,231,37,1)"},"error_y":{"color":"rgba(253,231,37,1)"},"error_x":{"color":"rgba(253,231,37,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d598f5cf47a935eaf02a" style="width:576px;height:460.8px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d598f5cf47a935eaf02a">{"x":{"visdat":{"257c787542d":["function () ","plotlyVisDat"]},"cur_data":"257c787542d","attrs":{"257c787542d":{"x":{},"y":{},"color":{},"colors":"viridis","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Number of Restaurants by Borough","xaxis":{"domain":[0,1],"automargin":true,"title":"Borough","type":"category","categoryorder":"array","categoryarray":["STATEN ISLAND","BRONX","QUEENS","BROOKLYN","MANHATTAN"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Number of Restaurants"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["STATEN ISLAND"],"y":[782],"type":"bar","name":"STATEN ISLAND","marker":{"color":"rgba(68,1,84,1)","line":{"color":"rgba(68,1,84,1)"}},"textfont":{"color":"rgba(68,1,84,1)"},"error_y":{"color":"rgba(68,1,84,1)"},"error_x":{"color":"rgba(68,1,84,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["BRONX"],"y":[1971],"type":"bar","name":"BRONX","marker":{"color":"rgba(59,82,139,1)","line":{"color":"rgba(59,82,139,1)"}},"textfont":{"color":"rgba(59,82,139,1)"},"error_y":{"color":"rgba(59,82,139,1)"},"error_x":{"color":"rgba(59,82,139,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["QUEENS"],"y":[4867],"type":"bar","name":"QUEENS","marker":{"color":"rgba(33,144,141,1)","line":{"color":"rgba(33,144,141,1)"}},"textfont":{"color":"rgba(33,144,141,1)"},"error_y":{"color":"rgba(33,144,141,1)"},"error_x":{"color":"rgba(33,144,141,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["BROOKLYN"],"y":[5338],"type":"bar","name":"BROOKLYN","marker":{"color":"rgba(93,200,99,1)","line":{"color":"rgba(93,200,99,1)"}},"textfont":{"color":"rgba(93,200,99,1)"},"error_y":{"color":"rgba(93,200,99,1)"},"error_x":{"color":"rgba(93,200,99,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["MANHATTAN"],"y":[8439],"type":"bar","name":"MANHATTAN","marker":{"color":"rgba(253,231,37,1)","line":{"color":"rgba(253,231,37,1)"}},"textfont":{"color":"rgba(253,231,37,1)"},"error_y":{"color":"rgba(253,231,37,1)"},"error_x":{"color":"rgba(253,231,37,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="chart-c" class="section level3">
 <h3>Chart C</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div id="htmlwidget-c5eb4601b53aa1e4eb3c" style="width:576px;height:460.8px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c5eb4601b53aa1e4eb3c">{"x":{"visdat":{"10d17dedf54d":["function () ","plotlyVisDat"]},"cur_data":"10d17dedf54d","attrs":{"10d17dedf54d":{"y":{},"x":{},"colors":"viridis","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Percent of Restaurants Below A Grade by Cuisine in 2017","xaxis":{"domain":[0,1],"automargin":true,"title":"% of Restaurants Below A"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Cuisine Type","type":"category","categoryorder":"array","categoryarray":["Italian","Korean","CafÃ©/Coffee/Tea","American","Donuts","Thai","Pizza","Chinese","Pizza/Italian","Other","Irish","Seafood","Sandwich","Bagels/Pretzels","Japanese","French","Delicatessen","Hamburgers","Mediterranean","Tex-Mex","Asian","Bakery","Middle Eastern","Spanish","Ice Cream, Gelato, Yogurt, Ices","Latin","Juice, Smoothies, Fruit Salads","Mexican","Indian","Greek","Jewish/Kosher","Chicken","Caribbean"]},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"y":["Italian","Korean","CafÃ©/Coffee/Tea","American","Donuts","Thai","Pizza","Chinese","Pizza/Italian","Other","Irish","Seafood","Sandwich","Bagels/Pretzels","Japanese","French","Delicatessen","Hamburgers","Mediterranean","Tex-Mex","Asian","Bakery","Middle Eastern","Spanish","Ice Cream, Gelato, Yogurt, Ices","Latin","Juice, Smoothies, Fruit Salads","Mexican","Indian","Greek","Jewish/Kosher","Chicken","Caribbean"],"x":[6.15199034981906,8.51063829787234,2.94550810014728,6.41411104429745,1.70575692963753,15.0793650793651,7.51503006012024,10.0917431192661,10.3044496487119,2.52525252525253,6.45161290322581,5.14705882352941,2.22602739726027,2.54777070063694,8.60366713681241,6.27450980392157,12.9277566539924,2.39520958083832,4.95049504950495,4.83870967741935,13.0434782608696,7.41324921135647,6.61764705882353,12.6605504587156,2.44755244755245,14.9350649350649,5.76271186440678,9.94475138121547,10.3448275862069,1.78571428571429,8.69565217391304,7.79220779220779,10.8348134991119],"type":"bar","orientation":"h","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5df319a411056d69a66f" style="width:576px;height:460.8px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5df319a411056d69a66f">{"x":{"visdat":{"257c6e13f49a":["function () ","plotlyVisDat"]},"cur_data":"257c6e13f49a","attrs":{"257c6e13f49a":{"y":{},"x":{},"colors":"viridis","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Percent of Restaurants Below A Grade by Cuisine in 2017","xaxis":{"domain":[0,1],"automargin":true,"title":"% of Restaurants Below 'A' Grade"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Cuisine Type","type":"category","categoryorder":"array","categoryarray":["Italian","Korean","CafÃ©/Coffee/Tea","American","Donuts","Thai","Pizza","Chinese","Pizza/Italian","Other","Irish","Seafood","Sandwich","Bagels/Pretzels","Japanese","French","Delicatessen","Hamburgers","Mediterranean","Tex-Mex","Asian","Bakery","Middle Eastern","Spanish","Ice Cream, Gelato, Yogurt, Ices","Latin","Juice, Smoothies, Fruit Salads","Mexican","Indian","Greek","Jewish/Kosher","Chicken","Caribbean"]},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"y":["Italian","Korean","CafÃ©/Coffee/Tea","American","Donuts","Thai","Pizza","Chinese","Pizza/Italian","Other","Irish","Seafood","Sandwich","Bagels/Pretzels","Japanese","French","Delicatessen","Hamburgers","Mediterranean","Tex-Mex","Asian","Bakery","Middle Eastern","Spanish","Ice Cream, Gelato, Yogurt, Ices","Latin","Juice, Smoothies, Fruit Salads","Mexican","Indian","Greek","Jewish/Kosher","Chicken","Caribbean"],"x":[6.15199034981906,8.51063829787234,2.94550810014728,6.41411104429745,1.70575692963753,15.0793650793651,7.51503006012024,10.0917431192661,10.3044496487119,2.52525252525253,6.45161290322581,5.14705882352941,2.22602739726027,2.54777070063694,8.60366713681241,6.27450980392157,12.9277566539924,2.39520958083832,4.95049504950495,4.83870967741935,13.0434782608696,7.41324921135647,6.61764705882353,12.6605504587156,2.44755244755245,14.9350649350649,5.76271186440678,9.94475138121547,10.3448275862069,1.78571428571429,8.69565217391304,7.79220779220779,10.8348134991119],"type":"bar","orientation":"h","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 
@@ -2678,7 +2699,7 @@ output:
     orientation: columns
     vertical_layout: fill
     source: embed
-    theme: yeti
+    theme: cosmo
     navbar:
       - { title: "Home", href: index.html}
 ---
@@ -2687,7 +2708,7 @@ output:
 library(flexdashboard)
 ```
 
-```{r}
+```{r, include=FALSE}
 library(tidyverse)
 library(janitor)
 library(p8105.datasets)
@@ -2753,7 +2774,7 @@ nyc_rest %>%
   mutate(cuisine_description = fct_reorder(cuisine_description, perc_failing)) %>%
   plot_ly(y = ~cuisine_description, x = ~perc_failing,
           type = "bar", colors = "viridis") %>%
-  layout(title = "Percent of Restaurants Below A Grade by Cuisine in 2017", xaxis = list(title ="% of Restaurants Below A"), yaxis = list(title = "Cuisine Type"))
+  layout(title = "Percent of Restaurants Below A Grade by Cuisine in 2017", xaxis = list(title ="% of Restaurants Below 'A' Grade"), yaxis = list(title = "Cuisine Type"))
 ```
 
 </code></pre>
@@ -2761,7 +2782,7 @@ nyc_rest %>%
 <script type="text/javascript">
 $(document).ready(function () {
   FlexDashboard.init({
-    theme: "yeti",
+    theme: "cosmo",
     fillPage: true,
     orientation: "columns",
     storyboard: false,
